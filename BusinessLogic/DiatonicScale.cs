@@ -17,7 +17,7 @@ namespace OOJazz.BusinessLogic
                 StepType.WholeStep,
                 StepType.HalfStep};
 
-        private Note _rootNote;
+       
         
 
       

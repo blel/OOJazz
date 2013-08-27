@@ -12,6 +12,8 @@ namespace OOJazz.BusinessLogic
 
         protected List<IntervalType> _intervals;
 
+        protected Note _rootNote;
+
         #endregion
 
         #region ----Properties----
