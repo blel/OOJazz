@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOJazz.BusinessLogic
 {
-    public class DiatonicMode : OOJazz.BusinessLogic.IDiatonicMode 
+    public class DiatonicMode : OOJazz.BusinessLogic.IDiatonicMode, OOJazz.IMode 
     {
         #region ----Fields----
 
@@ -52,5 +52,26 @@ namespace OOJazz.BusinessLogic
 
 
         #endregion
+
+        public List<IntervalType> ReorderIntervals(List<IntervalType> originalOrder)
+        {
+            int currentInterval = (int)_diatonicModeType - 1;
+            List<IntervalType> newOrder = new List<IntervalType>();
+
+            for (int i = 1; i <= originalOrder.Count; i++)
+            {
+                newOrder.Add(originalOrder.ElementAt(currentInterval));
+
+                if (currentInterval + i > originalOrder.Count)
+                {
+                    currentInterval = 0;
+                }
+                else
+                {
+                    currentInterval = currentInterval + 1;
+                }
+            }
+            return newOrder;
+        }
     }
 }

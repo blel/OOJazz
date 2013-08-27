@@ -87,7 +87,9 @@
     <Compile Include="BusinessLogic\Key.cs" />
     <Compile Include="BusinessLogic\Pattern.cs" />
     <Compile Include="BusinessLogic\Scale.cs" />
+    <Compile Include="BusinessLogic\StepAdapter.cs" />
     <Compile Include="BusinessLogic\StepType.cs" />
+    <Compile Include="IMode.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

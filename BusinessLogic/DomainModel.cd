@@ -17,7 +17,7 @@
   <Class Name="OOJazz.BusinessLogic.Scale">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\Scale.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -33,7 +33,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.Chord">
-    <Position X="7" Y="4.75" Width="1.5" />
+    <Position X="8.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AwgAIAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\Chord.cs</FileName>
@@ -95,9 +95,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.DiatonicScale">
-    <Position X="0.5" Y="4.25" Width="1.5" />
+    <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAxIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <HashCode>AAAhIAAAAAAAAAAAAIAAAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
       <FileName>BusinessLogic\DiatonicScale.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -107,7 +107,7 @@
   <Class Name="OOJazz.BusinessLogic.DiatonicMode">
     <Position X="3" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAIAAAAIAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\DiatonicMode.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -210,10 +210,17 @@
     </TypeIdentifier>
   </Class>
   <Interface Name="OOJazz.BusinessLogic.IDiatonicMode">
-    <Position X="3" Y="1.25" Width="1.5" />
+    <Position X="3.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IDiatonicMode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OOJazz.IMode">
+    <Position X="2" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMode.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="OOJazz.BusinessLogic.MasterNoteType">
@@ -245,7 +252,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="OOJazz.BusinessLogic.DiatonicModeTypes">
-    <Position X="2.75" Y="5.5" Width="2" />
+    <Position X="3" Y="5.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAABAAAAAAAgAAAACAAAAAAACAEAAAAAAgAAA=</HashCode>
       <FileName>BusinessLogic\DiatonicModeTypes.cs</FileName>

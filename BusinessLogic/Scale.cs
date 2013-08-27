@@ -7,7 +7,10 @@ namespace OOJazz.BusinessLogic
 {
     public abstract class Scale
     {
+        
         #region ----Fields----
+
+        protected List<IntervalType> _intervals;
 
         #endregion
 
@@ -15,12 +18,18 @@ namespace OOJazz.BusinessLogic
 
         public abstract List<Note> Notes { get; }
 
+        public abstract List<IntervalType> Intervals { get; }
+
         #endregion
 
 
 
         #region ----Methods----
 
+        public List<Chord> GetChords(Chord chord)
+        {
+            throw new NotImplementedException();
+        }
 
 
         #endregion
