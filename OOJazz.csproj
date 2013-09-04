@@ -62,18 +62,27 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BusinessLogic\Accidentials.cs" />
-    <Compile Include="BusinessLogic\DiatonicMode.cs" />
-    <Compile Include="BusinessLogic\DiatonicModeTypes.cs" />
-    <Compile Include="BusinessLogic\IDiatonicMode.cs" />
+    <Compile Include="BusinessLogic\Bar.cs" />
+    <Compile Include="BusinessLogic\Changes.cs" />
     <Compile Include="BusinessLogic\IntervalType.cs" />
     <Compile Include="BusinessLogic\KeyMode.cs" />
     <Compile Include="BusinessLogic\DiatonicScale.cs" />
+    <Compile Include="BusinessLogic\ListExtensions.cs" />
     <Compile Include="BusinessLogic\MasterNoteRow.cs" />
     <Compile Include="BusinessLogic\MasterNoteType.cs" />
     <Compile Include="BusinessLogic\MasterNote.cs" />
+    <Compile Include="BusinessLogic\Measure.cs" />
+    <Compile Include="BusinessLogic\Mode.cs" />
     <Compile Include="BusinessLogic\Note.cs" />
     <Compile Include="BusinessLogic\Second.cs" />
     <Compile Include="BusinessLogic\Step.cs" />
+    <Compile Include="Resources\OOJazzResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OOJazzResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourceHelper.cs" />
+    <Compile Include="Tests\TestChords.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,14 +91,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BusinessLogic\Chord.cs" />
+    <Compile Include="BusinessLogic\Tune.cs" />
+    <Compile Include="BusinessLogic\Voicing.cs" />
     <Compile Include="BusinessLogic\Interval.cs" />
     <Compile Include="BusinessLogic\Key.cs" />
     <Compile Include="BusinessLogic\Pattern.cs" />
     <Compile Include="BusinessLogic\Scale.cs" />
     <Compile Include="BusinessLogic\StepAdapter.cs" />
     <Compile Include="BusinessLogic\StepType.cs" />
-    <Compile Include="IMode.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -114,6 +123,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OOJazzResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OOJazzResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="BusinessLogic\DomainModel.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -121,6 +134,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

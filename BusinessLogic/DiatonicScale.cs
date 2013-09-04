@@ -9,7 +9,8 @@ namespace OOJazz.BusinessLogic
     {
         #region ----Fields----
 
-        private List<StepType> _steps = new List<StepType>(){StepType.WholeStep,
+        private List<StepType> _steps = new List<StepType>(){
+                StepType.WholeStep,
                 StepType.WholeStep,
                 StepType.HalfStep,
                 StepType.WholeStep,
@@ -17,15 +18,30 @@ namespace OOJazz.BusinessLogic
                 StepType.WholeStep,
                 StepType.HalfStep};
 
-       
-        
-
-      
-
         #endregion
 
         #region ----Properties----
 
+        public override string CurrentMode
+        {
+            get
+            {
+                return _currentMode.Name;
+            }
+
+            set
+            {
+                Mode newMode = (from cc in _modes
+                                where cc.Name == value
+                                select cc).First();
+                if (newMode == null)
+                {
+                    throw new Exception(string.Format("The mode \"{0}\" is not existing for this scale.", value));
+                }
+                _currentMode = newMode;
+            }
+        } 
+        
         public override List<Note> Notes
         {
             get {
@@ -37,13 +53,14 @@ namespace OOJazz.BusinessLogic
                 {
                     notes.Add(masterNoteRow.GetNextUpperNote(notes.Last(), stepType));
                 }
-                return notes;
+                return notes.RollLeft(_currentMode.Degree - 1);
             }
         }
 
         public override List<IntervalType> Intervals
         {
             get { return _intervals; }
+            set { _intervals = value; }
         }
 
         public List<StepType> Steps
@@ -51,32 +68,57 @@ namespace OOJazz.BusinessLogic
             get { return _steps; }
         }
 
+        public override List<Mode> Modes
+        {
+            get { return _modes; }
+        }
+
         #endregion
-
-
 
         #region ----Constructors----
 
         public DiatonicScale(Note rootNote)
         {
-            CreateIntervals();
+            InitScale();
             _rootNote = rootNote;
+            _currentMode = _modes.First();
         }
 
-        public DiatonicScale(Note rootNote, IDiatonicMode diatonicMode)
+        public DiatonicScale(Note rootNote, string diatonicModeType)
         {
-            CreateIntervals();
+            InitScale();
+            Mode newMode = (from cc in _modes
+                            where cc.Name == diatonicModeType
+                            select cc).First();
+            if (newMode == null)
+            {
+                throw new Exception(string.Format("The mode \"{0}\" is not existing for this scale.", diatonicModeType));
+            }
+            _currentMode = newMode;
+            
             _rootNote = rootNote;
-            _steps = diatonicMode.ReorderSteps(_steps);
-
         }
 
         #endregion
 
         #region ----Methods----
 
+        private void InitScale()
+        {
+            _modes = new List<Mode>() { 
+            new Mode(1, "Ionian"), 
+            new Mode(2, "Dorian"),
+            new Mode(3, "Phrygian"),
+            new Mode(4, "Lydian"),
+            new Mode(5, "Mixolydian"),
+            new Mode(6, "Aeolian"),
+            new Mode(7, "Locrian") };
+            CreateIntervals();
+        }
+
         private void CreateIntervals()
         {
+            _intervals = new List<IntervalType>();
             StepAdapter stepAdapter = new StepAdapter();
             foreach (StepType stepType in _steps)
             {
@@ -84,8 +126,26 @@ namespace OOJazz.BusinessLogic
             }
         }
 
+        public override void RollToNextMode()
+        {
+            if (_currentMode == _modes.Last())
+            {
+                _currentMode = _modes.First();
+            }
+            else
+            {
+                _currentMode = _modes.SkipWhile(cc => (_currentMode.Degree >= cc.Degree)).First();
+            }
+        }
+
+        public override List<IntervalType> GetIntervalsInCurrentMode()
+        {
+            List<IntervalType> resultList = new List<IntervalType>();
+            resultList.AddRange(_intervals);
+            resultList.RollLeft(_currentMode.Degree - 1);
+            return resultList;
+        }
 
         #endregion
-
     }
 }

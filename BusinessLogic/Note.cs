@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 
 namespace OOJazz.BusinessLogic
@@ -42,6 +43,39 @@ namespace OOJazz.BusinessLogic
         }
 
         #endregion
+
+        public double Value
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public bool IsBreak
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Changes Chord
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
 
         #region ----Constructors----
 
@@ -95,5 +129,13 @@ namespace OOJazz.BusinessLogic
 
 
         #endregion
+
+        public string GetNotation()
+        {
+            string notation = _notetype.ToString() + Resources.ResourceHelper.GetAccidentialNotation(_accidentials);
+
+            return notation;
+            
+        }
     }
 }

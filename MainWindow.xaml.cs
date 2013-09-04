@@ -25,7 +25,7 @@ namespace OOJazz
         List<IntervalType> intervals = new List<IntervalType>() {new Prime(),new MinorSecond(), new MajorSecond(), new MinorThird(), new MajorThird(),
                 new PerfectFourth(), new Tritone(), new DiminishedFifth(), new PerfectFifth(), new AugmentedFifth(), new MinorSixth(), new MajorSixth(), new MinorSeventh(), new MajorSeventh()};
 
-        Chord minor = new Chord("minor", new List<IntervalType>() { new MinorThird(), new PerfectFifth() });
+        Voicing minor = new Voicing("minor", new List<IntervalType>() { new MinorThird(), new PerfectFifth() });
    
 
 
@@ -48,6 +48,10 @@ namespace OOJazz
                 Note note = new Note((MasterNoteType)this.cmbNote.SelectedValue,
                     this.cmbAccidentials.SelectedValue == null ? 0 :
                     (Accidentials)this.cmbAccidentials.SelectedValue);
+
+                this.txbResult.Text+="Note notation: " + note.GetNotation() +"\r\n";
+
+
                 //Interval interval = new Interval(note, this.cmbIntervalType.SelectedValue == null ? 0 :
                 //    (IntervalType)this.cmbIntervalType.SelectedValue);
 
@@ -73,17 +77,43 @@ namespace OOJazz
                     this.txbResult.Text += String.Format("{0}{1} ", scaleNote.MasterNoteType.ToString(), scaleNote.Accidentials.ToString());
                 }
 
-
-                this.txbResult.Text += String.Format("\r\nMixo Scale: \r\n");
-                DiatonicScale mixoScale = new DiatonicScale(note, new DiatonicMode(DiatonicModeTypes.Mixolydian));
-                foreach (Note scaleNote in mixoScale.Notes)
+                Voicing majorTriad = new Voicing("major triad", new List<IntervalType>() { new MajorThird(), new PerfectFifth() });
+                majorTriad.GetMatchingChordNotes(majorScale);
+                foreach (List<Note> notes in majorTriad.GetMatchingChordNotes(majorScale))
                 {
-                    this.txbResult.Text += String.Format("{0}{1} ", scaleNote.MasterNoteType.ToString(), scaleNote.Accidentials.ToString());
+                    this.txbResult.Text += String.Format("Matching chord: \r\n");
+                    foreach (Note chordNote in notes)
+                    {
+                        this.txbResult.Text += chordNote.MasterNoteType.ToString() + chordNote.Accidentials.ToString() + " ";
+                    }
+                    this.txbResult.Text += String.Format("\r\n");
                 }
 
-               // this.txbResult.Text += string.Format("Minor chord notes: {0},{1},{2}", minor.GetNotes(note).First(), minor.GetNotes(note).ElementAt(1),minor.GetNotes(note).ElementAt(2));
+                try
+                {
+                    Changes CsharpMaj7 = new Changes(new Note(MasterNoteType.C, Accidentials.sharp), new List<IntervalType>() { new MajorThird(), new PerfectFifth(), new MajorSeventh() },
+                            new List<IntervalType>());
+
+                    //Changes Aflat7flat913 = new Changes(new Note(MasterNoteType.A, Accidentials.flat), new List<IntervalType>() { new MajorThird(), new MinorSeventh() },
+                    //    new List<IntervalType>() { new MinorSecond(), new MajorSixth() });
+                    this.txbResult.Text += CsharpMaj7.Name;
+                    //this.txbResult.Text += Aflat7flat913.Name;
+                    Changes CMajTriad = new Changes(new Note(MasterNoteType.C), new List<IntervalType>() { new MajorThird(), new PerfectFifth() }, new List<IntervalType>());
+                    this.txbResult.Text += CMajTriad.Name;
+                }
+                catch (Exception ex)
+                {
+                    this.txbResult.Text += ex.Message;
+                }
+
+
+
+
 
                 
+
+
+               
 
 
             }

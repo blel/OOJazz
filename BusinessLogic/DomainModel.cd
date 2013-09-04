@@ -1,28 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="OOJazz.BusinessLogic.Pattern" Collapsed="true">
-    <Position X="5.5" Y="0.75" Width="1.5" />
+  <Class Name="OOJazz.BusinessLogic.Pattern">
+    <Position X="5.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\Pattern.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.Progression">
-    <Position X="7.25" Y="0.75" Width="1.5" />
+    <Position X="3.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\Progression.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.Scale">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+    <Position X="1.25" Y="5.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAAgEAAgAAAAAAAAAoAAAAAAIIAAAEAAAAAAAAAgAAA=</HashCode>
       <FileName>BusinessLogic\Scale.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Modes" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.Key">
-    <Position X="8.75" Y="2" Width="1.5" />
+    <Position X="9.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAQACAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\Key.cs</FileName>
@@ -32,22 +35,25 @@
       <Property Name="KeyMode" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="OOJazz.BusinessLogic.Chord">
-    <Position X="8.75" Y="4.5" Width="1.5" />
+  <Class Name="OOJazz.BusinessLogic.Voicing">
+    <Position X="8.5" Y="13" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AwgAIAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BusinessLogic\Chord.cs</FileName>
+      <HashCode>AwgAIAAAEAAAAAAAAAAYAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\Voicing.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="BuildingIntervals" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.Interval">
-    <Position X="17" Y="9.25" Width="1.5" />
+    <Position X="17.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAACAAAAAAAIAAAAAABAAgAAAAAEACA=</HashCode>
       <FileName>BusinessLogic\Interval.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.Step">
-    <Position X="14.75" Y="6.25" Width="1.5" />
+    <Position X="14.75" Y="10.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
@@ -62,18 +68,19 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.Note">
-    <Position X="11.5" Y="0.75" Width="2" />
+    <Position X="12" Y="4.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAIBABAAAAAAAARAAAAAAABAIAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAIABAAAIBABhAAAAAAARAAAAAAABAoAAAAAAg=</HashCode>
       <FileName>BusinessLogic\Note.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="MasterNoteType" />
       <Property Name="Accidentials" />
+      <Property Name="Chord" />
     </ShowAsAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MasterNote">
-    <Position X="17.5" Y="3.5" Width="1.5" />
+    <Position X="17.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAQAAAAAgAAAAABAAAAEAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\MasterNote.cs</FileName>
@@ -85,7 +92,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MasterNoteRow">
-    <Position X="21" Y="3.5" Width="2.25" />
+    <Position X="21.5" Y="7" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAQQAAAAAAAgAAAACAEAAAIAACAAAAAAABACAAAAAA=</HashCode>
       <FileName>BusinessLogic\MasterNoteRow.cs</FileName>
@@ -95,30 +102,19 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.DiatonicScale">
-    <Position X="0.5" Y="5.5" Width="1.5" />
+    <Position X="1" Y="10" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAhIAAAAAAAAAAAAIAAAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
+      <HashCode>AAAhMAAAAAAAAAAAAIAAAAAAIIAIAEAAAAIAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\DiatonicScale.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Field Name="_steps" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="OOJazz.BusinessLogic.DiatonicMode">
-    <Position X="3" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAIAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BusinessLogic\DiatonicMode.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_diatonicModeType" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="OOJazz.BusinessLogic.IntervalType">
-    <Position X="20.5" Y="10.75" Width="1.5" />
+    <Position X="21" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAEAAAAAAQCAAAA=</HashCode>
+      <HashCode>AAAAAAAgAACAAAAAAAAAAIAAAAAAAAEBAAAAAQCAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -126,140 +122,164 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MajorSeventh" Collapsed="true">
-    <Position X="28.75" Y="13.5" Width="1.5" />
+    <Position X="29.25" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MinorSecond" Collapsed="true">
-    <Position X="6" Y="13.5" Width="1.5" />
+    <Position X="6.5" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MajorSecond" Collapsed="true">
-    <Position X="8.5" Y="13.5" Width="1.5" />
+    <Position X="9" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.Prime" Collapsed="true">
-    <Position X="3.75" Y="13.5" Width="1.5" />
+    <Position X="4.25" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MinorThird" Collapsed="true">
-    <Position X="15.25" Y="13.5" Width="1.5" />
+    <Position X="15.75" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MajorThird" Collapsed="true">
-    <Position X="19.75" Y="13.5" Width="1.5" />
+    <Position X="20.25" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.PerfectFourth" Collapsed="true">
-    <Position X="26.5" Y="13.5" Width="1.5" />
+    <Position X="27" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.AugmentedFifth" Collapsed="true">
-    <Position X="10.75" Y="13.5" Width="1.5" />
+    <Position X="11.25" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.DiminishedFifth" Collapsed="true">
-    <Position X="17.5" Y="13.5" Width="1.5" />
+    <Position X="18" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOJazz.BusinessLogic.MinorSixth" Collapsed="true">
-    <Position X="22" Y="13.5" Width="1.5" />
+  <Class Name="OOJazz.BusinessLogic.MinorSixth">
+    <Position X="22.5" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MajorSixth" Collapsed="true">
-    <Position X="24.25" Y="13.5" Width="1.5" />
+    <Position X="24.75" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOJazz.BusinessLogic.MinorSeventh" Collapsed="true">
-    <Position X="13" Y="13.5" Width="1.5" />
+    <Position X="13.5" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="OOJazz.BusinessLogic.IDiatonicMode">
-    <Position X="3.75" Y="1.5" Width="1.5" />
+  <Class Name="OOJazz.BusinessLogic.Mode">
+    <Position X="4.5" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BusinessLogic\IDiatonicMode.cs</FileName>
+      <HashCode>AAAAIAAAAAAAAAAAAAIAAAQQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\Mode.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="OOJazz.IMode">
-    <Position X="2" Y="1.5" Width="1.5" />
+  </Class>
+  <Class Name="OOJazz.BusinessLogic.Changes">
+    <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IMode.cs</FileName>
+      <HashCode>AAAgAABAAAAQACAAAAABAAAAgQAAAACAAAAAAAAQCAA=</HashCode>
+      <FileName>BusinessLogic\Changes.cs</FileName>
     </TypeIdentifier>
-  </Interface>
+  </Class>
+  <Class Name="OOJazz.BusinessLogic.Bar">
+    <Position X="11" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\Bar.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Notes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="OOJazz.BusinessLogic.Measure">
+    <Position X="6.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\Measure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOJazz.BusinessLogic.Tune">
+    <Position X="6.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEAAAAAAAAAAEQAAAAAAAAAEAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>BusinessLogic\Tune.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Key" />
+      <Property Name="Measure" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Bars" />
+    </ShowAsCollectionAssociation>
+  </Class>
   <Enum Name="OOJazz.BusinessLogic.MasterNoteType">
-    <Position X="17.5" Y="0.75" Width="1.5" />
+    <Position X="18" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvgEAAAA=</HashCode>
       <FileName>BusinessLogic\MasterNoteType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="OOJazz.BusinessLogic.Accidentials">
-    <Position X="11.5" Y="4.25" Width="1.5" />
+    <Position X="15.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAQAAEAAAgAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\Accidentials.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="OOJazz.BusinessLogic.KeyMode">
-    <Position X="6" Y="2" Width="1.5" />
+    <Position X="6.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>BusinessLogic\KeyMode.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="OOJazz.BusinessLogic.StepType">
-    <Position X="5" Y="9.25" Width="1.5" />
+    <Position X="12" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessLogic\StepType.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="OOJazz.BusinessLogic.DiatonicModeTypes">
-    <Position X="3" Y="5.25" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAEAAABAAAAAAAgAAAACAAAAAAACAEAAAAAAgAAA=</HashCode>
-      <FileName>BusinessLogic\DiatonicModeTypes.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Enum Name="OOJazz.BusinessLogic.MasterIntervalType">
-    <Position X="20" Y="7.75" Width="2.25" />
+    <Position X="20.75" Y="11" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAgBAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAAAYA=</HashCode>
       <FileName>BusinessLogic\IntervalType.cs</FileName>
